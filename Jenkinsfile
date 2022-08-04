@@ -1,6 +1,6 @@
 pipeline {
      environment {
-       ID_DOCKER = "choco1992"
+       ID_DOCKER = "claude2020"
        IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
 //       PORT_EXPOSED = "80" à paraméter dans le job
@@ -55,7 +55,7 @@ pipeline {
      stage ('Login and Push Image on docker hub') {
           agent any
         environment {
-           DOCKERHUB_PASSWORD  = credentials('dockerhub')
+           DOCKERHUB_PASSWORD  = credentials('dockerhub-credential')
         }            
           steps {
              script {
